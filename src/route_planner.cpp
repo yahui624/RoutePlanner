@@ -42,7 +42,7 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
         new_node->h_value = CalculateHValue(new_node);
         new_node->g_value = current_node->g_value + current_node->distance(*new_node);
         new_node->visited = true;
-        this->open_list.push_back(new_node);
+        this->open_list.emplace_back(new_node);
 
     }
 
